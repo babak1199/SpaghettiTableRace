@@ -50,7 +50,8 @@ namespace SpaghettiTableRace
                         {
                             Console.WriteLine(Name + "'s attempt to pick up " + RightChopstick.Name
                                                                 + " was failed due to timeout.");
-                            result.HasEaten = false;
+                            numberOfRetries++;
+                            continue;
                         }
                     }
                     finally
@@ -63,7 +64,6 @@ namespace SpaghettiTableRace
                 {
                     Console.WriteLine(Name + "'s attempt to pick up " + LeftChopstick.Name
                                                         + " was failed due to timeout.");
-                    result.HasEaten = false;
                 }
 
                 numberOfRetries++;
